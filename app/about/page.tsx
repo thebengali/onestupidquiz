@@ -1,0 +1,1 @@
+export default function About(){return (<div className='card'><h1>About</h1><p><strong>onestupidquiz.com</strong> publishes one playful, respectful quiz every day. The “stupid” is the quiz, not the player.</p><p>Scoring uses deliberately absurd <em>Stupid Points™</em>. It’s for smiles, not put-downs.</p><p>Created by Sanjay Mahendrakumar Mukherjee.</p></div>); }

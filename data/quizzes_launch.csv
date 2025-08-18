@@ -1,0 +1,71 @@
+quiz_date,idx,type,prompt,option_a,option_b,option_c,option_d,answer,explanation
+2025-08-18,1,mcq,"If you go to the mall with $10 to buy a car, how many cars do you return with?",0,1,Half a car,Depends on sale season,0,Cars cost more than $10. Unless it’s a toy.
+2025-08-18,2,mcq,Which capital is correct for Australia?,Sydney,Melbourne,Canberra,Perth,Canberra,Canberra has been the capital since 1913.
+2025-08-18,3,mcq,"Odd one out: Apple, Banana, Mango, Potato",Apple,Banana,Mango,Potato,Potato,"Potato is an underground stem, not a fruit."
+2025-08-18,4,mcq,What does CPU stand for?,Central Processing Unit,Computer Primary Unit,Core Processing Utility,Central Peripheral Unit,Central Processing Unit,The brain of the computer.
+2025-08-18,5,mcq,What does CPU stand for?,Central Processing Unit,Computer Primary Unit,Core Processing Utility,Central Peripheral Unit,Central Processing Unit,The brain of the computer.
+2025-08-19,1,mcq,How many minutes are there in one day?,"1,440","1,200","1,600","24,000","1,440","24 hours × 60 minutes = 1,440."
+2025-08-19,2,mcq,"Odd one out: Apple, Banana, Mango, Potato",Apple,Banana,Mango,Potato,Potato,"Potato is an underground stem, not a fruit."
+2025-08-19,3,mcq,Bananas are botanically considered a…,Berry,Tree,Vegetable,Nut,Berry,Bananas are berries; strawberries aren’t.
+2025-08-19,4,mcq,Which capital is correct for Australia?,Sydney,Melbourne,Canberra,Perth,Canberra,Canberra has been the capital since 1913.
+2025-08-19,5,mcq,"If you go to the mall with $10 to buy a car, how many cars do you return with?",0,1,Half a car,Depends on sale season,0,Cars cost more than $10. Unless it’s a toy.
+2025-08-20,1,mcq,Bananas are botanically considered a…,Berry,Tree,Vegetable,Nut,Berry,Bananas are berries; strawberries aren’t.
+2025-08-20,2,mcq,What does CPU stand for?,Central Processing Unit,Computer Primary Unit,Core Processing Utility,Central Peripheral Unit,Central Processing Unit,The brain of the computer.
+2025-08-20,3,mcq,"On the Moon, if you drop a feather and a hammer, which lands first?",Feather,Hammer,They land together,They float,They land together,No air resistance; Apollo 15 demo.
+2025-08-20,4,mcq,What does CPU stand for?,Central Processing Unit,Computer Primary Unit,Core Processing Utility,Central Peripheral Unit,Central Processing Unit,The brain of the computer.
+2025-08-20,5,mcq,What does CPU stand for?,Central Processing Unit,Computer Primary Unit,Core Processing Utility,Central Peripheral Unit,Central Processing Unit,The brain of the computer.
+2025-08-21,1,mcq,Which is NOT a primary color of light?,Red,Green,Blue,Yellow,Yellow,RGB are primary for light; yellow is secondary (red+green).
+2025-08-21,2,mcq,Which is heavier: 1 kg of feathers or 1 kg of steel?,Feathers,Steel,Both are equal,Ask my gym trainer,Both are equal,A kilogram is a kilogram.
+2025-08-21,3,mcq,"If you go to the mall with $10 to buy a car, how many cars do you return with?",0,1,Half a car,Depends on sale season,0,Cars cost more than $10. Unless it’s a toy.
+2025-08-21,4,mcq,"On the Moon, if you drop a feather and a hammer, which lands first?",Feather,Hammer,They land together,They float,They land together,No air resistance; Apollo 15 demo.
+2025-08-21,5,mcq,"On the Moon, if you drop a feather and a hammer, which lands first?",Feather,Hammer,They land together,They float,They land together,No air resistance; Apollo 15 demo.
+2025-08-22,1,mcq,Which is heavier: 1 kg of feathers or 1 kg of steel?,Feathers,Steel,Both are equal,Ask my gym trainer,Both are equal,A kilogram is a kilogram.
+2025-08-22,2,mcq,Which is NOT a primary color of light?,Red,Green,Blue,Yellow,Yellow,RGB are primary for light; yellow is secondary (red+green).
+2025-08-22,3,mcq,Which is heavier: 1 kg of feathers or 1 kg of steel?,Feathers,Steel,Both are equal,Ask my gym trainer,Both are equal,A kilogram is a kilogram.
+2025-08-22,4,mcq,"On the Moon, if you drop a feather and a hammer, which lands first?",Feather,Hammer,They land together,They float,They land together,No air resistance; Apollo 15 demo.
+2025-08-22,5,mcq,"Odd one out: Apple, Banana, Mango, Potato",Apple,Banana,Mango,Potato,Potato,"Potato is an underground stem, not a fruit."
+2025-08-23,1,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-23,2,mcq,"On the Moon, if you drop a feather and a hammer, which lands first?",Feather,Hammer,They land together,They float,They land together,No air resistance; Apollo 15 demo.
+2025-08-23,3,mcq,Bananas are botanically considered a…,Berry,Tree,Vegetable,Nut,Berry,Bananas are berries; strawberries aren’t.
+2025-08-23,4,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-23,5,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-24,1,mcq,Which is heavier: 1 kg of feathers or 1 kg of steel?,Feathers,Steel,Both are equal,Ask my gym trainer,Both are equal,A kilogram is a kilogram.
+2025-08-24,2,mcq,How many minutes are there in one day?,"1,440","1,200","1,600","24,000","1,440","24 hours × 60 minutes = 1,440."
+2025-08-24,3,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-24,4,mcq,How many minutes are there in one day?,"1,440","1,200","1,600","24,000","1,440","24 hours × 60 minutes = 1,440."
+2025-08-24,5,mcq,How many minutes are there in one day?,"1,440","1,200","1,600","24,000","1,440","24 hours × 60 minutes = 1,440."
+2025-08-25,1,mcq,How many minutes are there in one day?,"1,440","1,200","1,600","24,000","1,440","24 hours × 60 minutes = 1,440."
+2025-08-25,2,mcq,"On the Moon, if you drop a feather and a hammer, which lands first?",Feather,Hammer,They land together,They float,They land together,No air resistance; Apollo 15 demo.
+2025-08-25,3,mcq,"On the Moon, if you drop a feather and a hammer, which lands first?",Feather,Hammer,They land together,They float,They land together,No air resistance; Apollo 15 demo.
+2025-08-25,4,mcq,Which capital is correct for Australia?,Sydney,Melbourne,Canberra,Perth,Canberra,Canberra has been the capital since 1913.
+2025-08-25,5,mcq,Which capital is correct for Australia?,Sydney,Melbourne,Canberra,Perth,Canberra,Canberra has been the capital since 1913.
+2025-08-26,1,mcq,"If you go to the mall with $10 to buy a car, how many cars do you return with?",0,1,Half a car,Depends on sale season,0,Cars cost more than $10. Unless it’s a toy.
+2025-08-26,2,mcq,Which capital is correct for Australia?,Sydney,Melbourne,Canberra,Perth,Canberra,Canberra has been the capital since 1913.
+2025-08-26,3,mcq,Bananas are botanically considered a…,Berry,Tree,Vegetable,Nut,Berry,Bananas are berries; strawberries aren’t.
+2025-08-26,4,mcq,Bananas are botanically considered a…,Berry,Tree,Vegetable,Nut,Berry,Bananas are berries; strawberries aren’t.
+2025-08-26,5,mcq,"On the Moon, if you drop a feather and a hammer, which lands first?",Feather,Hammer,They land together,They float,They land together,No air resistance; Apollo 15 demo.
+2025-08-27,1,mcq,Bananas are botanically considered a…,Berry,Tree,Vegetable,Nut,Berry,Bananas are berries; strawberries aren’t.
+2025-08-27,2,mcq,Which is heavier: 1 kg of feathers or 1 kg of steel?,Feathers,Steel,Both are equal,Ask my gym trainer,Both are equal,A kilogram is a kilogram.
+2025-08-27,3,mcq,How many minutes are there in one day?,"1,440","1,200","1,600","24,000","1,440","24 hours × 60 minutes = 1,440."
+2025-08-27,4,mcq,Which capital is correct for Australia?,Sydney,Melbourne,Canberra,Perth,Canberra,Canberra has been the capital since 1913.
+2025-08-27,5,mcq,Which is heavier: 1 kg of feathers or 1 kg of steel?,Feathers,Steel,Both are equal,Ask my gym trainer,Both are equal,A kilogram is a kilogram.
+2025-08-28,1,mcq,"If you go to the mall with $10 to buy a car, how many cars do you return with?",0,1,Half a car,Depends on sale season,0,Cars cost more than $10. Unless it’s a toy.
+2025-08-28,2,mcq,"If you go to the mall with $10 to buy a car, how many cars do you return with?",0,1,Half a car,Depends on sale season,0,Cars cost more than $10. Unless it’s a toy.
+2025-08-28,3,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-28,4,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-28,5,mcq,Which capital is correct for Australia?,Sydney,Melbourne,Canberra,Perth,Canberra,Canberra has been the capital since 1913.
+2025-08-29,1,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-29,2,mcq,What does CPU stand for?,Central Processing Unit,Computer Primary Unit,Core Processing Utility,Central Peripheral Unit,Central Processing Unit,The brain of the computer.
+2025-08-29,3,mcq,Which capital is correct for Australia?,Sydney,Melbourne,Canberra,Perth,Canberra,Canberra has been the capital since 1913.
+2025-08-29,4,mcq,How many minutes are there in one day?,"1,440","1,200","1,600","24,000","1,440","24 hours × 60 minutes = 1,440."
+2025-08-29,5,mcq,Which is heavier: 1 kg of feathers or 1 kg of steel?,Feathers,Steel,Both are equal,Ask my gym trainer,Both are equal,A kilogram is a kilogram.
+2025-08-30,1,mcq,"Odd one out: Apple, Banana, Mango, Potato",Apple,Banana,Mango,Potato,Potato,"Potato is an underground stem, not a fruit."
+2025-08-30,2,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-30,3,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-30,4,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-30,5,mcq,"Odd one out: Apple, Banana, Mango, Potato",Apple,Banana,Mango,Potato,Potato,"Potato is an underground stem, not a fruit."
+2025-08-31,1,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-31,2,mcq,"On the Moon, if you drop a feather and a hammer, which lands first?",Feather,Hammer,They land together,They float,They land together,No air resistance; Apollo 15 demo.
+2025-08-31,3,mcq,"Odd one out: Apple, Banana, Mango, Potato",Apple,Banana,Mango,Potato,Potato,"Potato is an underground stem, not a fruit."
+2025-08-31,4,mcq,Which planet currently has the most known moons?,Jupiter,Saturn,Mars,Neptune,Saturn,Recent counts give Saturn a slight lead.
+2025-08-31,5,mcq,What does CPU stand for?,Central Processing Unit,Computer Primary Unit,Core Processing Utility,Central Peripheral Unit,Central Processing Unit,The brain of the computer.

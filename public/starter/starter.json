@@ -1,0 +1,974 @@
+{
+  "quizzes": [
+    {
+      "quiz_date": "2025-08-17",
+      "title": "One Stupid Quiz \u2014 Day 1",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-17. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-17. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-17. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-17. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-17. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-17. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-17. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    },
+    {
+      "quiz_date": "2025-08-18",
+      "title": "One Stupid Quiz \u2014 Day 2",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-18. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-18. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-18. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-18. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-18. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-18. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-18. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    },
+    {
+      "quiz_date": "2025-08-19",
+      "title": "One Stupid Quiz \u2014 Day 3",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-19. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-19. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-19. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-19. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-19. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-19. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-19. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    },
+    {
+      "quiz_date": "2025-08-20",
+      "title": "One Stupid Quiz \u2014 Day 4",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-20. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-20. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-20. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-20. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-20. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-20. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-20. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    },
+    {
+      "quiz_date": "2025-08-21",
+      "title": "One Stupid Quiz \u2014 Day 5",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-21. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-21. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-21. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-21. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-21. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-21. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-21. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    },
+    {
+      "quiz_date": "2025-08-22",
+      "title": "One Stupid Quiz \u2014 Day 6",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-22. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-22. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-22. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-22. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-22. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-22. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-22. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    },
+    {
+      "quiz_date": "2025-08-23",
+      "title": "One Stupid Quiz \u2014 Day 7",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-23. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-23. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-23. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-23. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-23. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-23. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-23. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    },
+    {
+      "quiz_date": "2025-08-24",
+      "title": "One Stupid Quiz \u2014 Day 8",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-24. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-24. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-24. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-24. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-24. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-24. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-24. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    },
+    {
+      "quiz_date": "2025-08-25",
+      "title": "One Stupid Quiz \u2014 Day 9",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-25. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-25. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-25. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-25. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-25. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-25. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-25. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    },
+    {
+      "quiz_date": "2025-08-26",
+      "title": "One Stupid Quiz \u2014 Day 10",
+      "questions": [
+        {
+          "idx": 1,
+          "type": "mcq",
+          "prompt": "Sample question 1 for 2025-08-26. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 2,
+          "type": "mcq",
+          "prompt": "Sample question 2 for 2025-08-26. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 3,
+          "type": "mcq",
+          "prompt": "Sample question 3 for 2025-08-26. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 4,
+          "type": "mcq",
+          "prompt": "Sample question 4 for 2025-08-26. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 5,
+          "type": "mcq",
+          "prompt": "Sample question 5 for 2025-08-26. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 6,
+          "type": "mcq",
+          "prompt": "Sample question 6 for 2025-08-26. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        },
+        {
+          "idx": 7,
+          "type": "mcq",
+          "prompt": "Sample question 7 for 2025-08-26. If you had $10 and tried to buy a car\u2026?",
+          "options": [
+            "0",
+            "1",
+            "Half a car",
+            "Depends on sale season"
+          ],
+          "answer": "0",
+          "explanation": "Cars cost more than $10 (unless it\u2019s a toy)."
+        }
+      ]
+    }
+  ]
+}

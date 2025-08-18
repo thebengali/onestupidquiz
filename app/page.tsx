@@ -1,0 +1,1 @@
+export default function Home(){return (<div><h1>One Stupid Quiz a Day</h1><p className='small'>Fun, exasperating, but always respectful.</p><p><a className='btn' href='/today'>Play Today’s Quiz →</a></p><p><a href='/leaderboard'>See the weekly leaderboard</a></p></div>); }

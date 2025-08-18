@@ -1,0 +1,1 @@
+export default function Starter(){return (<div className='card'><h1>Starter Content</h1><p>Open <a href='/admin'>Admin</a> → Load Starter Content → Import JSON.</p><p>Or download <a href='/starter/starter.json'>starter.json</a> and import manually.</p></div>); }

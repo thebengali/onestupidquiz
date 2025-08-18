@@ -1,0 +1,6 @@
+Release v1.0 — Launch Bundle
+- Countdown to midnight IST on /today
+- Anonymous user_id for streaks & leaderboard
+- Weekly leaderboard (last 7 days)
+- Share Card OG image (/result + /api/og)
+- CSV importer in /admin
