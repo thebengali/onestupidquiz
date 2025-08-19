@@ -1,134 +1,70 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import questions from "../../data/questions";
-
-type Q = (typeof questions)[number];
+import { useState } from 'react';
+import Link from 'next/link';
+import { questions } from '@/data/questions';
 
 export default function QuizPage() {
-  const [idx, setIdx] = useState(0);
+  const [i, setI] = useState(0);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
   const [locked, setLocked] = useState(false);
-  const [picked, setPicked] = useState<number | null>(null);
+  const [done, setDone] = useState(false);
 
-  const q: Q | undefined = questions[idx];
-  const total = questions.length;
+  const q = questions[i];
 
-  if (!q) {
-    // End screen
-    return (
-      <main style={{ padding: 24 }}>
-        <h1>Quiz Complete 🎉</h1>
-        <p style={{ marginTop: 8 }}>
-          Final score: <b>{score}</b> points
-        </p>
-        <button
-          onClick={() => {
-            setIdx(0);
-            setScore(0);
-            setStreak(0);
-            setPicked(null);
-            setLocked(false);
-          }}
-          style={btn}
-        >
-          Play again
-        </button>
-      </main>
-    );
-  }
-
-  const points = q.points ?? 5;
-  const multiplier = 1 + Math.min(streak, 5) * 0.2; // up to 2×
-  const awarded = Math.round(points * multiplier);
-
-  function pickAnswer(i: number) {
-    if (locked) return;
-    setPicked(i);
+  function pick(choice: number) {
+    if (done || locked || !q) return;
     setLocked(true);
 
-    const q = questions[i]; if (!q) return; const correct = opt === q.correct;
+    const correct = choice === q.correct;
     if (correct) {
+      const awarded = 1 + Math.min(streak, 3);
       setScore((s) => s + awarded);
       setStreak((s) => s + 1);
     } else {
       setStreak(0);
     }
-  }
 
-  function next() {
-    if (!locked) return;
-    setIdx((n) => n + 1);
-    setPicked(null);
-    setLocked(false);
+    setTimeout(() => {
+      setLocked(false);
+      if (i + 1 < questions.length) setI(i + 1);
+      else setDone(true);
+    }, 250);
   }
 
   return (
-    <main style={{ padding: 24, maxWidth: 760 }}>
-      <header style={{ marginBottom: 12, display: "flex", gap: 16, alignItems: "baseline" }}>
-        <h1 style={{ margin: 0 }}>OneStupidQuiz</h1>
-        <span style={{ opacity: 0.7 }}>
-          Q {idx + 1}/{total}
-        </span>
-        <span style={{ marginLeft: "auto" }}>
-          Score: <b>{score}</b> · Streak: <b>{streak}</b>
-        </span>
-      </header>
+    <main style={{ padding: 24 }}>
+      <h1>OneStupidQuiz</h1>
 
-      <section>
-        <h2 style={{ marginTop: 0 }}>{q.question}</h2>
-        <ul style={{ listStyle: "none", padding: 0, margin: "16px 0", display: "grid", gap: 10 }}>
-          {q.corrects.map((a, i) => {
-            const isPick = i === picked;
-            const isCorrect = locked && i === q.correct;
-            const isWrong = locked && isPick && !isCorrect;
-            return (
-              <li key={i}>
-                <button
-                  onClick={() => pickAnswer(i)}
-                  disabled={locked}
-                  style={{
-                    ...btn,
-                    width: "100%",
-                    textAlign: "left",
-                    borderColor: isCorrect ? "#22c55e" : isWrong ? "#ef4444" : "#999",
-                    background: isCorrect ? "#ecfdf5" : isWrong ? "#fef2f2" : "white",
-                  }}
-                >
-                  {a}
-                </button>
-              </li>
-            );
-          })}
-        </ul>
+      {!done && q && (
+        <>
+          <p>Q{i + 1}/{questions.length}</p>
+          <h2>{q.prompt}</h2>
 
-        {!locked ? (
-          <p style={{ opacity: 0.7 }}>This question is worth <b>{points}</b> pts · streak bonus x{multiplier.toFixed(1)}</p>
-        ) : (
-          <div style={{ marginTop: 8 }}>
-            {picked === q.correct ? (
-              <p>
-                ✅ <b>Correct!</b> {q.quipCorrect ?? "Nice."} +{awarded} pts (base {points} × {multiplier.toFixed(1)})
-              </p>
-            ) : (
-              <p>
-                ❌ <b>Not quite.</b> {q.quipWrong ?? "Chaos points not awarded."} The answer was{" "}
-                <b>{q.corrects[q.correct]}</b>.
-              </p>
-            )}
-            <button onClick={next} style={btn}>Next →</button>
+          <div style={{ display: 'grid', gap: 12, marginTop: 16 }}>
+            {q.answers.map((a, idx) => (
+              <button
+                key={idx}
+                disabled={locked}
+                onClick={() => pick(idx)}
+                style={{ padding: '12px 16px', cursor: locked ? 'not-allowed' : 'pointer' }}
+              >
+                {a}
+              </button>
+            ))}
           </div>
-        )}
-      </section>
+        </>
+      )}
+
+      {done && (
+        <>
+          <h2>All done!</h2>
+          <p>Score: {score}</p>
+          <p>Best streak: {streak}</p>
+          <Link href="/"><u>Back home</u></Link>
+        </>
+      )}
     </main>
   );
 }
-
-const btn: React.CSSProperties = {
-  padding: "12px 14px",
-  borderRadius: 10,
-  border: "1px solid #999",
-  background: "white",
-  cursor: "pointer",
-};
