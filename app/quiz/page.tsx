@@ -40,7 +40,7 @@ export default function QuizPage() {
       {!done && q && (
         <>
           <p>Q{i + 1}/{questions.length}</p>
-          <h2>{q.prompt}</h2>
+          <h2>{q.question}</h2>
 
           <div style={{ display: 'grid', gap: 12, marginTop: 16 }}>
             {q.answers.map((a, idx) => (
