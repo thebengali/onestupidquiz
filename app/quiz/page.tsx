@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import questions from "@/data/questions";
+import questions from "../../data/questions";
 
 type Q = (typeof questions)[number];
 
@@ -79,7 +79,7 @@ export default function QuizPage() {
       <section>
         <h2 style={{ marginTop: 0 }}>{q.question}</h2>
         <ul style={{ listStyle: "none", padding: 0, margin: "16px 0", display: "grid", gap: 10 }}>
-          {q.answers.map((a, i) => {
+          {q.corrects.map((a, i) => {
             const isPick = i === picked;
             const isCorrect = locked && i === q.correct;
             const isWrong = locked && isPick && !isCorrect;
@@ -114,7 +114,7 @@ export default function QuizPage() {
             ) : (
               <p>
                 ❌ <b>Not quite.</b> {q.quipWrong ?? "Chaos points not awarded."} The answer was{" "}
-                <b>{q.answers[q.correct]}</b>.
+                <b>{q.corrects[q.correct]}</b>.
               </p>
             )}
             <button onClick={next} style={btn}>Next →</button>
