@@ -48,7 +48,7 @@ export default function QuizPage() {
     setPicked(i);
     setLocked(true);
 
-    const correct = i === q.correct;
+    const q = questions[i]; if (!q) return; const correct = opt === q.correct;
     if (correct) {
       setScore((s) => s + awarded);
       setStreak((s) => s + 1);
