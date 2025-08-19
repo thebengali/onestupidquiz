@@ -1,63 +1,85 @@
-export type Question = {
-  question: string;
-  answers: string[];
-  correct: number; // index in answers[]
-  quipCorrect?: string;
-  quipWrong?: string;
-  points?: number;
-};
-
-export const questions: Question[] = [
+export type Option = { text: string; score: number; quip: string };
+export type Question = { id: string; question: string; options: Option[] };
+const questions: Question[] = [
   {
-    question: "What’s the *least* helpful thing to say to someone debugging?",
-    answers: [
-      "“Have you tried turning it off and on again?”",
-      "“Works on my machine.”",
-      "“Let’s rubber-duck this.”",
-      "“Ship it and we’ll fix in prod.”"
-    ],
-    correct: 1,
-    quipCorrect: "Classic. The universal non-fix.",
-    quipWrong: "Bold pick. Still not as cursed as 'fix in prod'.",
-    points: 7
+    id: "two-plus-two",
+    question: "What can 2 and 2 get you?",
+    options: [
+      { text: "4", score: 1.0, quip: "Correct, conventional, mildly disappointing." },
+      { text: "5", score: 0.75, quip: "Confident presentation adds 1.0 of vibes." },
+      { text: "Depends who’s counting", score: 0.5, quip: "Politics is just arithmetic with adjectives." },
+      { text: "Whatever the rubric says", score: 0.33, quip: "If the rubric says jazz, we clap." }
+    ]
   },
   {
-    question: "Which beverage best describes Monday energy?",
-    answers: ["Espresso", "Decaf", "Iced matcha", "Battery acid (figurative!)"],
-    correct: 0,
-    quipCorrect: "Zap-zap ⚡ You’re caffeinated *and* correct.",
-    quipWrong: "Respect the matcha, but Mondays need rocket fuel.",
-    points: 5
+    id: "success",
+    question: "Best way to ‘succeed’?",
+    options: [
+      { text: "Work hard", score: 1.0, quip: "Respect. Bring snacks." },
+      { text: "Network shamelessly", score: 0.75, quip: "Merit, but make it social." },
+      { text: "Be born into it", score: 0.5, quip: "Speedrun unlocked." },
+      { text: "Redefine ‘success’ until you win", score: 0.33, quip: "Semantic gymnastics earns partial credit." }
+    ]
   },
   {
-    question: "Tabs vs Spaces: what’s the *only* right answer?",
-    answers: ["Tabs", "Spaces", "Whatever the formatter says", "ASCII art indentation"],
-    correct: 2,
-    quipCorrect: "Let the robots fight. You keep shipping.",
-    quipWrong: "Spicy! But the formatter is the real boss.",
-    points: 9
+    id: "meetings",
+    question: "A ‘quick sync’ is…",
+    options: [
+      { text: "An hour", score: 1.0, quip: "Time is a flat calendar." },
+      { text: "15 minutes", score: 0.75, quip: "Legend says this once happened." },
+      { text: "An email", score: 0.5, quip: "Future archaeologists will praise you." },
+      { text: "A lifestyle", score: 0.33, quip: "Grindset: invited." }
+    ]
   },
   {
-    question: "Product says 'quick tweak'. What’s your ETA?",
-    answers: ["5 min", "1 hour", "Tomorrow", "Unknown (Schrödinger’s bug)"],
-    correct: 3,
-    quipCorrect: "At least you’re honest. Reality is a quantum state.",
-    quipWrong: "Optimism is cute. Reality is… less so.",
-    points: 8
+    id: "tabs-spaces",
+    question: "Tabs vs Spaces?",
+    options: [
+      { text: "Whatever the formatter says", score: 1.0, quip: "We bow to the robot." },
+      { text: "Spaces", score: 0.75, quip: "Soft yet opinionated." },
+      { text: "Tabs", score: 0.5, quip: "Hard stop at chaos." },
+      { text: "ASCII art indentation", score: 0.33, quip: "Michelangelo of tech debt." }
+    ]
   },
   {
-    question: "Pick the best commit message:",
-    answers: [
-      "fix stuff",
-      "refactor: split quiz logic, add snarky quips",
-      "final_final_REAL_final",
-      "wip"
-    ],
-    correct: 1,
-    quipCorrect: "Chef’s kiss. Future you says thanks.",
-    quipWrong: "Future you is filing an HR complaint.",
-    points: 6
+    id: "deadline",
+    question: "Best ETA for a ‘quick tweak’?",
+    options: [
+      { text: "Unknown (Schrödinger’s bug)", score: 1.0, quip: "Observed only at merge." },
+      { text: "Tomorrow", score: 0.75, quip: "Optimism with a helmet." },
+      { text: "1 hour", score: 0.5, quip: "A unit of hope." },
+      { text: "5 minutes", score: 0.33, quip: "Performance art." }
+    ]
+  },
+  {
+    id: "fix-system",
+    question: "Best way to fix a broken system?",
+    options: [
+      { text: "Touch grass", score: 1.0, quip: "Nature patches 90% of bugs." },
+      { text: "Rebrand the problem", score: 0.75, quip: "Now it’s innovation." },
+      { text: "Start a task force", score: 0.5, quip: "Calendar-first engineering." },
+      { text: "Follow the process", score: 0.33, quip: "Paperwork is duct tape for empires." }
+    ]
+  },
+  {
+    id: "ai",
+    question: "The purpose of AI is to…",
+    options: [
+      { text: "Automate the boring bits", score: 1.0, quip: "May your wrists rejoice." },
+      { text: "Replace meetings", score: 0.75, quip: "If only it liked snacks." },
+      { text: "Generate decks forever", score: 0.5, quip: "Slide 47 cures nothing." },
+      { text: "Win arguments online", score: 0.33, quip: "Achievement unlocked: notifications." }
+    ]
+  },
+  {
+    id: "ethics",
+    question: "Most ethical way to ship fast?",
+    options: [
+      { text: "Small safe launches", score: 1.0, quip: "Iterate without collateral damage." },
+      { text: "Feature flags + rollbacks", score: 0.75, quip: "Parachutes are chic." },
+      { text: "Hope and dashboards", score: 0.5, quip: "Observability is not absolution." },
+      { text: "Fix in prod", score: 0.33, quip: "Bold. Also: no." }
+    ]
   }
 ];
-
 export default questions;
