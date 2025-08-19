@@ -1,6 +1,7 @@
 'use client';
 import { useMemo, useState } from 'react';
-import { questions, Option } from "@/app/data/questions";
+import { questions, type Option } from "../data/questions";
+
 
 type Q = {
   id: string;
