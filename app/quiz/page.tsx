@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { questions } from '@/data/questions';
+import { questions } from '../../data/questions';
 
 export default function QuizPage() {
   const [i, setI] = useState(0);
