@@ -1,8 +1,8 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    <main style={{padding:24}}>
-      <h1>OneStupidQuiz</h1>
-      <p>App Router working ✅</p>
+    <main>
+      <h1>Welcome to OneStupidQuiz</h1>
+      <p>Test your knowledge with our fun quiz app!</p>
     </main>
   );
 }
