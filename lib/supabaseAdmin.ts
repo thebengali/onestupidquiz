@@ -1,10 +1,15 @@
-// lib/supabaseAdmin.ts (server-only)
+// lib/supabaseAdmin.ts — lazy server-only client
 import { createClient } from '@supabase/supabase-js';
 
-const url = process.env.SUPABASE_URL as string;
-const service = process.env.SUPABASE_SERVICE_ROLE_KEY as string;
+export function getSupabaseAdmin() {
+  const url = process.env.SUPABASE_URL;
+  const service = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-// Node runtime only; do not import on the client
-export const supabaseAdmin = createClient(url, service, {
-  auth: { persistSession: false, autoRefreshToken: false }
-});
+  if (!url || !service) {
+    throw new Error('Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY');
+  }
+
+  return createClient(url, service, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
