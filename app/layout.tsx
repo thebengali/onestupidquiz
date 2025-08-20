@@ -1,10 +1,11 @@
 import "./globals.css";
-import Header from "./components/Header";
-import Link from "next/link";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "onestupidquiz",
-  description: "A satirical take on quizzes and society",
+export const metadata: Metadata = {
+  title: "One Stupid Quiz",
+  description: "A fun quiz app built with Next.js",
 };
 
 export default function RootLayout({
@@ -16,10 +17,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
-        <main className="p-4">{children}</main>
-        <footer className="p-4 border-t text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} onestupidquiz · <Link href="/terms">Terms</Link>
-        </footer>
+        <main className="min-h-screen p-6">{children}</main>
+        <Footer />
       </body>
     </html>
   );
