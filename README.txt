@@ -1,32 +1,36 @@
-ONESTUPIDQUIZ — Anti‑Gamification & SEO Patch
+ONESTUPIDQUIZ — First‑Party Visitor Counter (Supabase, no personal data)
 
-What changes
-- Removes Sign Up from header; no auth, no tracking.
-- Dedicated routes per quiz at /quiz/[id] for better SEO and sharing.
-- Home lists all quizzes with Start buttons.
-- Next Quiz navigates to the next route.
-- Simple Privacy page that states “we collect nothing.”
-- robots.ts + sitemap.ts for basic SEO.
+What this does
+- Stores a single aggregate integer in your own Supabase DB.
+- No cookies, no IPs, no user IDs. Anonymous and privacy‑friendly.
+- Increments when the homepage loads; value shows as "Visitors: N".
 
-Replace/add files:
-- components/Header.tsx
-- components/Footer.tsx
-- components/Quiz.tsx
-- app/page.tsx
-- app/quiz/[id]/page.tsx   (new folder)
-- app/privacy/page.tsx      (new)
-- app/robots.ts             (new)
-- app/sitemap.ts            (new)
+Files
+- lib/supabaseAdmin.ts            (server-only client, service role key)
+- app/api/visitors/route.ts       (POST increments, GET reads)
+- components/VisitorCounter.tsx   (client widget)
+- app/page.tsx                    (renders counter on homepage)
+- supabase/migrations/20250820_counters.sql  (table + function)
+- .env.local.example
 
-Then:
-  cd ~/Projects/onestupidquiz
-  rm -rf .next
-  npm run build
+Steps
+1) Install dependency if not already present:
+   cd ~/Projects/onestupidquiz
+   npm i @supabase/supabase-js
+
+2) Create env vars:
+   - Locally: copy .env.local.example to .env.local and fill values
+   - On Vercel project settings:
+     SUPABASE_URL
+     SUPABASE_SERVICE_ROLE_KEY
+
+3) In Supabase -> SQL Editor, run the SQL in supabase/migrations/20250820_counters.sql
+
+4) Build:
+   rm -rf .next
+   npm run build
 
 Git:
-  git add .
-  git commit -m "feat: anti-gamification pass; routed quizzes; privacy page; SEO robots+sitemap"
-  git push origin main
-
-Optional: delete the old sign-up page entirely:
-  git rm -r app/signup || true
+   git add .
+   git commit -m "feat(counter): first-party visitor counter via Supabase (no personal data)"
+   git push origin main
