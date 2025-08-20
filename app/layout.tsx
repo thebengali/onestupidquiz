@@ -13,7 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Header />
-        {children}
+        <main className="container">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

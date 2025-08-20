@@ -9,12 +9,11 @@ export default function Header() {
       <div className="container row">
         <div className="site-logo">Q</div>
         <div className={`site-title ${titleFont.className}`}>
-          onestupidquiz
+          ONESTUPIDQUIZ
         </div>
         <nav className="site-nav">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
-          <Link href="/terms">Terms</Link>
           <Link href="/signup">Sign Up</Link>
         </nav>
       </div>

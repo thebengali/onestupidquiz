@@ -1,7 +1,7 @@
 // components/Quiz.tsx
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { quizzes } from "@/app/data/quizzes";
 
 const QUIP_DELAY_MS = 10000; // 10s before auto-advance
@@ -28,8 +28,9 @@ export default function Quiz() {
   function pick(weight: number, quipText?: string) {
     if (locked) return;
     setLocked(true);
+    if (typeof weight !== "number") weight = 0;
     if (quipText) setQuip(quipText);
-    setScore((s) => s + weight);
+    setScore((s) => +(s + weight).toFixed(2)); // round to 2 decimals
 
     timerRef.current = window.setTimeout(() => {
       if (qIndex + 1 < total) {
@@ -62,12 +63,12 @@ export default function Quiz() {
     setQuip(null);
   }
 
-  if (!quiz) return <div className="container">No quizzes found.</div>;
+  if (!quiz) return <div>No quizzes found.</div>;
 
   if (done) {
     const pct = Math.round((score / total) * 100);
     return (
-      <main className="container quiz-wrap">
+      <section className="quiz-wrap">
         <h2 className="quiz-h">{quiz.title}</h2>
         <div className="center">
           <div className="quiz-q">Done! Score {score}/{total} ({pct}%)</div>
@@ -76,12 +77,12 @@ export default function Quiz() {
             <button className="btn" onClick={nextQuiz}>Next Quiz</button>
           </div>
         </div>
-      </main>
+      </section>
     );
   }
 
   return (
-    <main className="container quiz-wrap">
+    <section className="quiz-wrap">
       <div className="small">Q{qIndex + 1}/{total} &nbsp; Score {score} / {total}</div>
       <h2 className="quiz-h">{quiz.title}</h2>
       <div className="quiz-q">{q.prompt}</div>
@@ -91,7 +92,7 @@ export default function Quiz() {
           <button
             key={idx}
             className="quiz-btn"
-            onClick={() => pick(opt.weight, opt.quip)}
+            onClick={() => pick(opt.weight as number, opt.quip)}
             disabled={locked}
           >
             {opt.text}
@@ -105,6 +106,6 @@ export default function Quiz() {
         <button className="btn" onClick={replay} disabled={qIndex === 0 && !locked}>Replay</button>
         <button className="btn" onClick={nextQuiz}>Next Quiz</button>
       </div>
-    </main>
+    </section>
   );
 }
