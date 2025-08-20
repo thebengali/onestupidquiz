@@ -1,133 +1,109 @@
-// app/components/Quiz.tsx
+// components/Quiz.tsx
 "use client";
 
-import { useMemo, useState } from "react";
-import { questions as qlist, Option, Question } from "@/app/data/questions";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { quizzes } from "@/app/data/quizzes";
+
+const QUIP_DELAY_MS = 10000; // 10s before auto-advance
 
 export default function Quiz() {
-  const [i, setI] = useState(0);
+  const [quizIndex, setQuizIndex] = useState(0);
+  const [qIndex, setQIndex] = useState(0);
   const [score, setScore] = useState(0);
-  const [streak, setStreak] = useState(0);
   const [locked, setLocked] = useState(false);
   const [done, setDone] = useState(false);
   const [quip, setQuip] = useState<string | null>(null);
+  const timerRef = useRef<number | null>(null);
 
-  const total = qlist.length;
+  const quiz = quizzes[quizIndex];
+  const total = quiz.questions.length;
+  const q = quiz.questions[qIndex];
 
-  const maxPossible = useMemo(
-    () =>
-      qlist.reduce(
-        (m, q) => m + Math.max(...q.options.map((o) => o.weight)),
-        0
-      ),
-    []
-  );
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) window.clearTimeout(timerRef.current);
+    };
+  }, []);
 
-  const q = qlist[i];
-
-  function pick(opt: Option) {
-    if (locked || done) return;
+  function pick(weight: number, quipText?: string) {
+    if (locked) return;
     setLocked(true);
-    setScore((s) => +(s + opt.weight).toFixed(2));
-    setQuip(opt.quip ?? null);
+    if (quipText) setQuip(quipText);
+    setScore((s) => s + weight);
 
-    const best = Math.max(...q.options.map((o) => o.weight));
-    setStreak((s) => (opt.weight === best ? s + 1 : 0));
-
-    setTimeout(() => {
-      setLocked(false);
-      setQuip(null);
-      if (i + 1 < total) setI(i + 1);
-      else setDone(true);
-    }, 900);
+    timerRef.current = window.setTimeout(() => {
+      if (qIndex + 1 < total) {
+        setQIndex((i) => i + 1);
+        setLocked(false);
+        setQuip(null);
+      } else {
+        setDone(true);
+      }
+    }, QUIP_DELAY_MS);
   }
 
+  function replay() {
+    if (timerRef.current) window.clearTimeout(timerRef.current);
+    setQIndex(0);
+    setScore(0);
+    setLocked(false);
+    setDone(false);
+    setQuip(null);
+  }
+
+  function nextQuiz() {
+    if (timerRef.current) window.clearTimeout(timerRef.current);
+    const next = (quizIndex + 1) % quizzes.length;
+    setQuizIndex(next);
+    setQIndex(0);
+    setScore(0);
+    setLocked(false);
+    setDone(false);
+    setQuip(null);
+  }
+
+  if (!quiz) return <div className="container">No quizzes found.</div>;
+
   if (done) {
-    const pct = Math.round((score / maxPossible) * 100);
+    const pct = Math.round((score / total) * 100);
     return (
-      <main style={{ padding: 24 }}>
-        <h1>That’s a wrap 🎬</h1>
-        <p style={{ marginTop: 8 }}>
-          Score: <b>{score}</b> / {maxPossible} ({pct}%)
-        </p>
-        <p style={{ marginTop: 8 }}>
-          Hot-streak: <b>{streak}</b>
-        </p>
-        <button
-          onClick={() => {
-            setI(0);
-            setScore(0);
-            setStreak(0);
-            setLocked(false);
-            setDone(false);
-            setQuip(null);
-          }}
-          style={{
-            marginTop: 16,
-            padding: "10px 16px",
-            border: "1px solid #333",
-            background: "#fff",
-            cursor: "pointer",
-          }}
-        >
-          Play again
-        </button>
+      <main className="container quiz-wrap">
+        <h2 className="quiz-h">{quiz.title}</h2>
+        <div className="center">
+          <div className="quiz-q">Done! Score {score}/{total} ({pct}%)</div>
+          <div className="actions center">
+            <button className="btn" onClick={replay}>Replay</button>
+            <button className="btn" onClick={nextQuiz}>Next Quiz</button>
+          </div>
+        </div>
       </main>
     );
   }
 
   return (
-    <main style={{ padding: 24 }}>
-      <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
-        <h1 style={{ margin: 0 }}>Q{i + 1}/{total}</h1>
-        <span style={{ opacity: 0.7 }}>
-          Score {score} / {maxPossible}
-        </span>
-      </div>
+    <main className="container quiz-wrap">
+      <div className="small">Q{qIndex + 1}/{total} &nbsp; Score {score} / {total}</div>
+      <h2 className="quiz-h">{quiz.title}</h2>
+      <div className="quiz-q">{q.prompt}</div>
 
-      <h2 style={{ marginTop: 12 }}>{q.prompt}</h2>
-
-      {quip && (
-        <div
-          style={{
-            marginTop: 8,
-            padding: "8px 12px",
-            border: "1px dashed #999",
-            background: "#fafafa",
-            borderRadius: 8,
-          }}
-        >
-          {quip}
-        </div>
-      )}
-
-      <div
-        style={{
-          display: "grid",
-          gap: 12,
-          marginTop: 16,
-          gridTemplateColumns: "1fr",
-          maxWidth: 700,
-        }}
-      >
+      <div className="quiz-opts">
         {q.options.map((opt, idx) => (
           <button
             key={idx}
-            onClick={() => pick(opt)}
+            className="quiz-btn"
+            onClick={() => pick(opt.weight, opt.quip)}
             disabled={locked}
-            style={{
-              textAlign: "left",
-              padding: "14px 16px",
-              borderRadius: 12,
-              border: "2px solid #111",
-              background: locked ? "#eee" : "#fff",
-              cursor: locked ? "not-allowed" : "pointer",
-              fontSize: 16,
-            }}
           >
             {opt.text}
           </button>
         ))}
+      </div>
+
+      {quip && <div className="quip">{quip}</div>}
+
+      <div className="actions">
+        <button className="btn" onClick={replay} disabled={qIndex === 0 && !locked}>Replay</button>
+        <button className="btn" onClick={nextQuiz}>Next Quiz</button>
       </div>
     </main>
   );

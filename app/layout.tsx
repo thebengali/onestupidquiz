@@ -1,23 +1,19 @@
-import "./globals.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
+import './globals.css';
+import Header from '@components/Header';
+import Footer from '@components/Footer';
 
 export const metadata: Metadata = {
-  title: "One Stupid Quiz",
-  description: "A fun quiz app built with Next.js",
+  title: 'OneStupidQuiz',
+  description: 'Have fun, learn a little, no pressure.',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
         <Header />
-        <main className="min-h-screen p-6">{children}</main>
+        {children}
         <Footer />
       </body>
     </html>
