@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container small">
         © {new Date().getFullYear()} Sanjay Mahendrakumar Mukherjee. All rights reserved.{" "}
-        <a href="/terms">Terms</a>
+        <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a>
       </div>
     </footer>
   );

@@ -14,7 +14,6 @@ export default function Header() {
         <nav className="site-nav">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
-          <Link href="/signup">Sign Up</Link>
         </nav>
       </div>
     </header>

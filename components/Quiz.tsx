@@ -1,13 +1,16 @@
 // components/Quiz.tsx
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import { quizzes } from "@/app/data/quizzes";
+import { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { quizzes } from '@/app/data/quizzes';
 
-const QUIP_DELAY_MS = 10000; // 10s before auto-advance
+const QUIP_DELAY_MS = 10000;
 
-export default function Quiz() {
-  const [quizIndex, setQuizIndex] = useState(0);
+export default function Quiz({ quizId }: { quizId?: string }) {
+  const router = useRouter();
+  const initialIndex = Math.max(0, quizzes.findIndex(q => q.id === quizId));
+  const [quizIndex, setQuizIndex] = useState(initialIndex);
   const [qIndex, setQIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [locked, setLocked] = useState(false);
@@ -20,18 +23,15 @@ export default function Quiz() {
   const q = quiz.questions[qIndex];
 
   useEffect(() => {
-    return () => {
-      if (timerRef.current) window.clearTimeout(timerRef.current);
-    };
+    return () => { if (timerRef.current) window.clearTimeout(timerRef.current); };
   }, []);
 
   function pick(weight: number, quipText?: string) {
     if (locked) return;
     setLocked(true);
-    if (typeof weight !== "number") weight = 0;
+    if (typeof weight !== 'number') weight = 0;
     if (quipText) setQuip(quipText);
-    setScore((s) => +(s + weight).toFixed(2)); // round to 2 decimals
-
+    setScore((s) => +(s + weight).toFixed(2));
     timerRef.current = window.setTimeout(() => {
       if (qIndex + 1 < total) {
         setQIndex((i) => i + 1);
@@ -45,22 +45,15 @@ export default function Quiz() {
 
   function replay() {
     if (timerRef.current) window.clearTimeout(timerRef.current);
-    setQIndex(0);
-    setScore(0);
-    setLocked(false);
-    setDone(false);
-    setQuip(null);
+    setQIndex(0); setScore(0); setLocked(false); setDone(false); setQuip(null);
   }
 
   function nextQuiz() {
     if (timerRef.current) window.clearTimeout(timerRef.current);
     const next = (quizIndex + 1) % quizzes.length;
-    setQuizIndex(next);
-    setQIndex(0);
-    setScore(0);
-    setLocked(false);
-    setDone(false);
-    setQuip(null);
+    const nextId = quizzes[next].id;
+    setQuizIndex(next); setQIndex(0); setScore(0); setLocked(false); setDone(false); setQuip(null);
+    router.push(`/quiz/${nextId}`);
   }
 
   if (!quiz) return <div>No quizzes found.</div>;
@@ -86,22 +79,14 @@ export default function Quiz() {
       <div className="small">Q{qIndex + 1}/{total} &nbsp; Score {score} / {total}</div>
       <h2 className="quiz-h">{quiz.title}</h2>
       <div className="quiz-q">{q.prompt}</div>
-
       <div className="quiz-opts">
         {q.options.map((opt, idx) => (
-          <button
-            key={idx}
-            className="quiz-btn"
-            onClick={() => pick(opt.weight as number, opt.quip)}
-            disabled={locked}
-          >
+          <button key={idx} className="quiz-btn" onClick={() => pick(opt.weight as number, opt.quip)} disabled={locked}>
             {opt.text}
           </button>
         ))}
       </div>
-
       {quip && <div className="quip">{quip}</div>}
-
       <div className="actions">
         <button className="btn" onClick={replay} disabled={qIndex === 0 && !locked}>Replay</button>
         <button className="btn" onClick={nextQuiz}>Next Quiz</button>
