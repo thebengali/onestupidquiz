@@ -3,10 +3,19 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="border-b">
-      <div className="max-w-6xl mx-auto px-4 py-4 grid grid-cols-[auto_1fr_auto] items-center gap-4">
-        {/* Left: Logo (green oval) */}
-        <Link href="/" aria-label="OneStupidQuiz home" className="block">
+    <header style={{ borderBottom: '1px solid #e5e5e5' }}>
+      <div
+        style={{
+          maxWidth: 1200,
+          margin: '0 auto',
+          padding: '16px',
+          display: 'grid',
+          gridTemplateColumns: 'auto 1fr auto',
+          alignItems: 'center',
+          gap: 16,
+        }}
+      >
+        <Link href="/" aria-label="OneStupidQuiz home" style={{ display: 'block', lineHeight: 0 }}>
           <Image
             src="/brand/OSQ_Logo.png"
             alt="OSQ Logo"
@@ -17,8 +26,7 @@ export default function Header() {
           />
         </Link>
 
-        {/* Center: Site name wordmark */}
-        <div className="flex justify-center">
+        <div style={{ display: 'flex', justifyContent: 'center', lineHeight: 0 }}>
           <Image
             src="/brand/OSQ_SiteNameBrand.png"
             alt="OneStupidQuiz"
@@ -29,12 +37,21 @@ export default function Header() {
           />
         </div>
 
-        {/* Right: Nav (button-like) */}
-        <nav className="flex items-center gap-4 justify-end">
-          <Link href="/" className="inline-block rounded-lg border-2 px-4 py-2 font-semibold hover:bg-neutral-50">Home</Link>
-          <Link href="/about" className="inline-block rounded-lg border-2 px-4 py-2 font-semibold hover:bg-neutral-50">About</Link>
+        <nav style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', gap: 12 }}>
+          <Link href="/" style={btnStyle}>Home</Link>
+          <Link href="/about" style={btnStyle}>About</Link>
         </nav>
       </div>
     </header>
   );
 }
+
+const btnStyle: React.CSSProperties = {
+  display: 'inline-block',
+  padding: '8px 14px',
+  border: '2px solid #222',
+  borderRadius: 10,
+  fontWeight: 700,
+  color: '#111',
+  textDecoration: 'none',
+};
