@@ -17,7 +17,6 @@ type QuizProps = {
   quirkyScoring?: boolean;
   onReplay?: () => void;
   onNextQuiz?: () => void;
-  showScore?: boolean; // default false (mockup hides score)
 };
 
 function computeScoreDelta(correct: boolean, streak: number) {
@@ -38,7 +37,6 @@ export default function Quiz({
   quirkyScoring = true,
   onReplay,
   onNextQuiz,
-  showScore = false,
 }: QuizProps) {
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -86,19 +84,19 @@ export default function Quiz({
   return (
     <div className="w-full max-w-3xl p-4">
       <h2 className="text-4xl font-extrabold mb-4">{title}</h2>
-      <div className="text-base opacity-80 mb-6">Q {progressText}</div>
+      <div className="text-lg font-medium opacity-80 mb-6">Q {progressText}</div>
 
       <div className="bg-white rounded-2xl p-6 border-2 shadow-sm">
-        <p className="text-2xl font-semibold mb-6">
+        <p className="text-3xl font-semibold mb-6">
           {q.prompt}
         </p>
 
-        {/* Big stacked options */}
-        <div className="space-y-3 mb-6">
+        {/* Big stacked options (full-width) */}
+        <div className="space-y-4 mb-8">
           {q.options.map((opt, i) => {
             const isCorrect = i === q.answerIndex;
             const chosen = selected === i;
-            let cls = "w-full text-left px-6 py-4 rounded-lg border-2 text-xl font-medium flex items-center gap-4 transition";
+            let cls = "block w-full text-left px-6 py-5 rounded-lg border-2 text-2xl font-medium flex items-center gap-5 transition";
             if (selected !== null) {
               if (isCorrect) cls += " bg-green-50 border-green-600";
               if (chosen && !isCorrect) cls += " bg-red-50 border-red-600";
@@ -112,8 +110,8 @@ export default function Quiz({
                 onClick={() => handleSelect(i)}
                 disabled={selected !== null}
               >
-                <span className="text-2xl font-bold w-6">{i + 1}.</span>
-                <span>{opt}</span>
+                <span className="text-3xl font-bold w-8">{i + 1}.</span>
+                <span className="flex-1">{opt}</span>
               </button>
             );
           })}
@@ -121,9 +119,9 @@ export default function Quiz({
 
         {/* Feedback banner (green highlight) */}
         {showFeedback && (
-          <div className="mt-4">
-            <div className="rounded-xl border-2 border-green-600 bg-green-200 px-4 py-3 shadow">
-              <p className="font-bold">
+          <div className="mt-2">
+            <div className="rounded-xl border-2 border-green-700 bg-green-200 px-5 py-4 shadow">
+              <p className="text-xl font-bold">
                 {selected === q.answerIndex ? 'Nice! Correct ✅' : 'Oops! Not quite ❌'}
               </p>
               {q.explain && <p className="text-sm mt-1">{q.explain}</p>}
@@ -132,26 +130,22 @@ export default function Quiz({
         )}
 
         {/* Controls row */}
-        <div className="mt-8 grid grid-cols-2 gap-6">
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
           <button
-            className="px-6 py-3 rounded-lg border-2 text-lg font-medium hover:bg-neutral-50 disabled:opacity-50"
+            className="px-6 py-4 rounded-lg border-2 text-xl font-medium hover:bg-neutral-50 disabled:opacity-50"
             onClick={onReplay}
             disabled={!onReplay || showFeedback || selected !== null}
           >
             Replay
           </button>
           <button
-            className="px-6 py-3 rounded-lg border-2 text-lg font-medium hover:bg-neutral-50 disabled:opacity-50"
+            className="px-6 py-4 rounded-lg border-2 text-xl font-medium hover:bg-neutral-50 disabled:opacity-50"
             onClick={onNextQuiz}
             disabled={!onNextQuiz || showFeedback || selected !== null}
           >
             Next Quiz
           </button>
         </div>
-
-        {showScore && (
-          <div className="mt-4 text-sm opacity-80">Score: <span className="font-semibold">{score}</span></div>
-        )}
       </div>
     </div>
   );

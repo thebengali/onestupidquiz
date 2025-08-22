@@ -29,17 +29,17 @@ export default function HomePage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-6">
-      {/* Top category row */}
-      <div className="mb-8">
-        <div className="flex flex-wrap gap-3">
+    <div className="max-w-6xl mx-auto px-4 py-8">
+      {/* Centered category row */}
+      <div className="mb-8 flex justify-center">
+        <div className="flex flex-wrap gap-4">
           {ALL_CATEGORIES.map((c) => {
             const activeCat = c === selectedCat;
             return (
               <button
                 key={c}
                 onClick={() => handleSelectCat(c)}
-                className={`px-4 py-2 rounded-xl border-2 ${activeCat ? 'bg-neutral-800 text-white border-neutral-800' : 'hover:bg-neutral-50'}`}
+                className={`px-5 py-2.5 rounded-xl border-2 text-lg ${activeCat ? 'bg-neutral-800 text-white border-neutral-800' : 'hover:bg-neutral-50'}`}
               >
                 {c}
               </button>
@@ -49,14 +49,15 @@ export default function HomePage() {
       </div>
 
       {/* Quiz Stage */}
-      <Quiz
-        key={active.slug + ':' + runKey}
-        title={active.title}
-        questions={active.questions}
-        onReplay={handleReplay}
-        onNextQuiz={handleNextQuiz}
-        showScore={false}
-      />
+      <div className="flex justify-center">
+        <Quiz
+          key={active.slug + ':' + runKey}
+          title={active.title}
+          questions={active.questions}
+          onReplay={handleReplay}
+          onNextQuiz={handleNextQuiz}
+        />
+      </div>
     </div>
   );
 }
