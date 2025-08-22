@@ -13,10 +13,11 @@ type QuizProps = {
   title: string;
   questions: Question[];
   onComplete?: (score: number) => void;
-  feedbackDurationMs?: number; // default 3000ms
-  quirkyScoring?: boolean; // optional wacky scoring toggle
-  onReplay?: () => void;   // show Replay button if provided
-  onNextQuiz?: () => void; // show Next Quiz button if provided
+  feedbackDurationMs?: number; // default 3000
+  quirkyScoring?: boolean;
+  onReplay?: () => void;
+  onNextQuiz?: () => void;
+  showScore?: boolean; // default false (mockup hides score)
 };
 
 function computeScoreDelta(correct: boolean, streak: number) {
@@ -37,6 +38,7 @@ export default function Quiz({
   quirkyScoring = true,
   onReplay,
   onNextQuiz,
+  showScore = false,
 }: QuizProps) {
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -68,7 +70,6 @@ export default function Quiz({
     }
 
     setShowFeedback(true);
-
     timerRef.current = setTimeout(() => {
       setShowFeedback(false);
       setSelected(null);
@@ -84,24 +85,25 @@ export default function Quiz({
 
   return (
     <div className="w-full max-w-3xl p-4">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-3xl font-extrabold">{title}</h2>
-        <div className="text-sm opacity-80">Q {progressText}</div>
-      </div>
+      <h2 className="text-4xl font-extrabold mb-4">{title}</h2>
+      <div className="text-base opacity-80 mb-6">Q {progressText}</div>
 
-      <div className="bg-white/70 rounded-2xl p-6 border shadow-sm">
-        <p className="text-xl mb-6">{q.prompt}</p>
+      <div className="bg-white rounded-2xl p-6 border-2 shadow-sm">
+        <p className="text-2xl font-semibold mb-6">
+          {q.prompt}
+        </p>
 
-        {/* Options as horizontal chips */}
-        <div className="flex flex-wrap gap-3 mb-6">
+        {/* Big stacked options */}
+        <div className="space-y-3 mb-6">
           {q.options.map((opt, i) => {
             const isCorrect = i === q.answerIndex;
             const chosen = selected === i;
-            let cls =
-              "inline-flex items-center gap-2 px-4 py-2 rounded-full border transition hover:bg-neutral-50";
+            let cls = "w-full text-left px-6 py-4 rounded-lg border-2 text-xl font-medium flex items-center gap-4 transition";
             if (selected !== null) {
-              if (isCorrect) cls = "inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-green-600 bg-green-50";
-              if (chosen && !isCorrect) cls = "inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-red-600 bg-red-50";
+              if (isCorrect) cls += " bg-green-50 border-green-600";
+              if (chosen && !isCorrect) cls += " bg-red-50 border-red-600";
+            } else {
+              cls += " hover:bg-neutral-50";
             }
             return (
               <button
@@ -110,51 +112,46 @@ export default function Quiz({
                 onClick={() => handleSelect(i)}
                 disabled={selected !== null}
               >
-                {opt}
+                <span className="text-2xl font-bold w-6">{i + 1}.</span>
+                <span>{opt}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Feedback banner */}
+        {/* Feedback banner (green highlight) */}
         {showFeedback && (
-          <div className="mt-2">
-            <div className="rounded-xl border-2 border-yellow-400 bg-yellow-50 px-4 py-3 shadow animate-pulse">
-              <p className="font-semibold">
+          <div className="mt-4">
+            <div className="rounded-xl border-2 border-green-600 bg-green-200 px-4 py-3 shadow">
+              <p className="font-bold">
                 {selected === q.answerIndex ? 'Nice! Correct ✅' : 'Oops! Not quite ❌'}
               </p>
-              {q.explain && <p className="text-sm opacity-80 mt-1">{q.explain}</p>}
-              <p className="text-xs opacity-70 mt-2">Advancing in 3 seconds…</p>
+              {q.explain && <p className="text-sm mt-1">{q.explain}</p>}
             </div>
           </div>
         )}
 
-        {/* Footer row inside the card: Score + Replay/Next */}
-        <div className="mt-6 flex items-center justify-between">
-          <div className="text-sm">
-            Score: <span className="font-semibold">{score}</span>
-          </div>
-          <div className="flex gap-3">
-            {onReplay && (
-              <button
-                className="px-4 py-2 rounded-lg border hover:bg-neutral-50 text-sm"
-                onClick={onReplay}
-                disabled={showFeedback || selected !== null}
-              >
-                Replay
-              </button>
-            )}
-            {onNextQuiz && (
-              <button
-                className="px-4 py-2 rounded-lg border hover:bg-neutral-50 text-sm"
-                onClick={onNextQuiz}
-                disabled={showFeedback || selected !== null}
-              >
-                Next Quiz
-              </button>
-            )}
-          </div>
+        {/* Controls row */}
+        <div className="mt-8 grid grid-cols-2 gap-6">
+          <button
+            className="px-6 py-3 rounded-lg border-2 text-lg font-medium hover:bg-neutral-50 disabled:opacity-50"
+            onClick={onReplay}
+            disabled={!onReplay || showFeedback || selected !== null}
+          >
+            Replay
+          </button>
+          <button
+            className="px-6 py-3 rounded-lg border-2 text-lg font-medium hover:bg-neutral-50 disabled:opacity-50"
+            onClick={onNextQuiz}
+            disabled={!onNextQuiz || showFeedback || selected !== null}
+          >
+            Next Quiz
+          </button>
         </div>
+
+        {showScore && (
+          <div className="mt-4 text-sm opacity-80">Score: <span className="font-semibold">{score}</span></div>
+        )}
       </div>
     </div>
   );

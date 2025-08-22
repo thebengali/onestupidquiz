@@ -1,19 +1,19 @@
-# OSQ — Homepage Quiz Stage Update (2025-08-22)
+# OSQ — Mockup-aligned Homepage & Quiz UI (2025-08-22)
 
-- Home page now shows the **Quiz Stage** (no set list).
-- Category sidebar remains; selecting a category loads that category's **first quiz**.
-- Added **Replay** and **Next Quiz** buttons inside the quiz card.
-- Options now render as **horizontal chips** that wrap.
-- Keeps 3s feedback highlight & auto-advance.
+- Home: category buttons in a horizontal row; **no set list**.
+- Main content shows the **Quiz Stage** with large stacked options (1., 2., 3., 4.).
+- Feedback appears in a **green highlighted** box.
+- Large **Replay** and **Next Quiz** buttons under feedback.
+- Score is hidden on Home by default (can be toggled via `showScore`).
 
 ## Files
-- components/Quiz.tsx (updated)
-- app/page.tsx (updated)
+- components/Quiz.tsx
+- app/page.tsx
 
 ## Local check
 npm run build
 
 ## Commit & push
 git add .
-git commit -m "feat: homepage shows quiz stage with category filter, replay & next; chip options"
+git commit -m "style: homepage matches mockup (top categories); quiz options as large boxes; green feedback; buttons"
 git push origin main

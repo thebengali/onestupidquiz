@@ -1,6 +1,5 @@
 'use client';
 import React, { useMemo, useState } from 'react';
-import CategorySidebar from '@/components/CategorySidebar';
 import Quiz from '@/components/Quiz';
 import { QUIZ_SETS, QuizSet, ALL_CATEGORIES } from '@/lib/quizzes';
 
@@ -11,14 +10,14 @@ export default function HomePage() {
     [selectedCat]
   );
   const [idx, setIdx] = useState<number>(0);
-  const [runKey, setRunKey] = useState<number>(0); // bump to replay
+  const [runKey, setRunKey] = useState<number>(0);
 
   const active = setsInCat[idx] ?? setsInCat[0] ?? QUIZ_SETS[0];
 
   const handleSelectCat = (cat: string) => {
     setSelectedCat(cat);
     setIdx(0);
-    setRunKey((k) => k + 1); // reset quiz instance
+    setRunKey((k) => k + 1);
   };
 
   const handleReplay = () => setRunKey((k) => k + 1);
@@ -31,22 +30,33 @@ export default function HomePage() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6">
-      <div className="grid grid-cols-1 sm:grid-cols-[14rem_1fr] gap-8">
-        <CategorySidebar
-          categories={ALL_CATEGORIES}
-          selected={selectedCat}
-          onSelect={handleSelectCat}
-        />
-        <main>
-          <Quiz
-            key={active.slug + ':' + runKey}
-            title={active.title}
-            questions={active.questions}
-            onReplay={handleReplay}
-            onNextQuiz={handleNextQuiz}
-          />
-        </main>
+      {/* Top category row */}
+      <div className="mb-8">
+        <div className="flex flex-wrap gap-3">
+          {ALL_CATEGORIES.map((c) => {
+            const activeCat = c === selectedCat;
+            return (
+              <button
+                key={c}
+                onClick={() => handleSelectCat(c)}
+                className={`px-4 py-2 rounded-xl border-2 ${activeCat ? 'bg-neutral-800 text-white border-neutral-800' : 'hover:bg-neutral-50'}`}
+              >
+                {c}
+              </button>
+            );
+          })}
+        </div>
       </div>
+
+      {/* Quiz Stage */}
+      <Quiz
+        key={active.slug + ':' + runKey}
+        title={active.title}
+        questions={active.questions}
+        onReplay={handleReplay}
+        onNextQuiz={handleNextQuiz}
+        showScore={false}
+      />
     </div>
   );
 }
