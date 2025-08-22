@@ -1,19 +1,23 @@
-# OSQ — Stage Alignment Final (2025-08-22)
+# OSQ — Switch to QuizStage component (2025-08-22)
 
-- Stage is strictly centered with `max-w-3xl mx-auto`.
-- Category row sits **above** and aligned to the same stage width.
-- Options are **stacked full-width** boxes with numeric labels (no chips).
-- Feedback box is green and prominent; 3s auto-advance unchanged.
-- Large Replay / Next Quiz buttons below feedback.
+This update guarantees the mockup layout by introducing a new component and updating imports.
 
 ## Files
-- components/Quiz.tsx
-- app/page.tsx
+- components/QuizStage.tsx (NEW): Stacked full-width options, green feedback, large buttons
+- app/page.tsx (UPDATED): Uses QuizStage and centers the stage (`max-w-3xl mx-auto`); categories aligned to stage width
+- app/quiz/[id]/page.tsx (UPDATED): Uses QuizStage
 
-## Local check
+## Clean-up (remove legacy component to avoid confusion)
+git rm components/Quiz.tsx
+
+## Build & push
+rm -rf .next
 npm run build
-
-## Commit & push
 git add .
-git commit -m "style: center stage and align categories; stacked option boxes; prominent feedback"
+git commit -m "refactor(ui): switch to QuizStage with centered stage and stacked options per mockup"
 git push origin main
+
+## Verify
+- Options render as big stacked boxes with 1., 2., 3., 4.
+- Category row stays aligned to the same width as the quiz stage.
+- Feedback shows in a green highlighted bar for ~3s.

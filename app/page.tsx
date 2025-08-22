@@ -1,6 +1,6 @@
 'use client';
 import React, { useMemo, useState } from 'react';
-import Quiz from '@/components/Quiz';
+import QuizStage from '@/components/QuizStage';
 import { QUIZ_SETS, QuizSet, ALL_CATEGORIES } from '@/lib/quizzes';
 
 export default function HomePage() {
@@ -30,9 +30,7 @@ export default function HomePage() {
 
   return (
     <div className="px-4 py-8">
-      {/* Centered Stage Container */}
       <div className="max-w-3xl mx-auto">
-        {/* Category row aligned to stage */}
         <div className="mb-8 flex flex-wrap gap-4">
           {ALL_CATEGORIES.map((c) => {
             const activeCat = c === selectedCat;
@@ -48,8 +46,7 @@ export default function HomePage() {
           })}
         </div>
 
-        {/* Quiz Stage */}
-        <Quiz
+        <QuizStage
           key={active.slug + ':' + runKey}
           title={active.title}
           questions={active.questions}
