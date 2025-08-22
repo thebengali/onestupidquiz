@@ -38,7 +38,7 @@ export default function HomePage() {
               <button
                 key={c}
                 onClick={() => handleSelectCat(c)}
-                className={`px-5 py-2.5 rounded-xl border-2 text-lg ${activeCat ? 'bg-neutral-800 text-white border-neutral-800' : 'hover:bg-neutral-50'}`}
+                className={`px-6 py-3 rounded-xl border-2 text-xl ${activeCat ? 'bg-neutral-800 text-white border-neutral-800' : 'hover:bg-neutral-50'}`}
               >
                 {c}
               </button>

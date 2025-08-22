@@ -123,14 +123,14 @@ export default function Quiz({
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
           <button
-            className="px-6 py-4 rounded-lg border-2 text-xl font-medium hover:bg-neutral-50 disabled:opacity-50"
+            className="px-8 py-5 rounded-lg border-2 text-2xl font-medium hover:bg-neutral-50 disabled:opacity-50"
             onClick={onReplay}
             disabled={!onReplay || showFeedback || selected !== null}
           >
             Replay
           </button>
           <button
-            className="px-6 py-4 rounded-lg border-2 text-xl font-medium hover:bg-neutral-50 disabled:opacity-50"
+            className="px-8 py-5 rounded-lg border-2 text-2xl font-medium hover:bg-neutral-50 disabled:opacity-50"
             onClick={onNextQuiz}
             disabled={!onNextQuiz || showFeedback || selected !== null}
           >
