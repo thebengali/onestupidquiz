@@ -1,11 +1,12 @@
-# OSQ — Inline-enforced Stage Layout (2025-08-22)
+# OSQ — Header brand update (2025-08-22)
 
-- Quiz option boxes styled with **inline styles** to override any global `button{}` CSS.
-- Stage is centered with `max-w-3xl mx-auto`; category row aligned to stage.
-- Files replaced: `components/Quiz.tsx`, `app/page.tsx`, `app/quiz/[id]/page.tsx`.
+Transparent assets generated:
+- public/brand/wordmark-black.png
+- public/brand/wordmark-white.png
+- public/brand/wordmark-purple.png
+- public/brand/logo-q-black.png
+- public/brand/logo-q-white.png
+- public/brand/logo-q-purple.png
 
-## Build & Push
-npm run build
-git add .
-git commit -m "style: enforce stacked full-width quiz options and centered stage via inline styles"
-git push origin main
+Header defaults to: logo-q-purple + wordmark-black.
+Switch variants by swapping the file names in components/Header.tsx.
