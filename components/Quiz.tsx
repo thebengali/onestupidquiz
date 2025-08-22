@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 type Question = {
   id: string;
@@ -15,9 +15,10 @@ type QuizProps = {
   onComplete?: (score: number) => void;
   feedbackDurationMs?: number; // default 3000ms
   quirkyScoring?: boolean; // optional wacky scoring toggle
+  onReplay?: () => void;   // show Replay button if provided
+  onNextQuiz?: () => void; // show Next Quiz button if provided
 };
 
-// Simple quirky scoring: +1 for correct, -0.3 for wrong, +0.5 bonus if streak >= 3
 function computeScoreDelta(correct: boolean, streak: number) {
   if (correct) {
     let delta = 1;
@@ -32,8 +33,10 @@ export default function Quiz({
   title,
   questions,
   onComplete,
-  feedbackDurationMs = 3000, // updated default
+  feedbackDurationMs = 3000,
   quirkyScoring = true,
+  onReplay,
+  onNextQuiz,
 }: QuizProps) {
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
@@ -52,7 +55,7 @@ export default function Quiz({
   }, []);
 
   const handleSelect = (i: number) => {
-    if (selected !== null) return; // prevent double clicks during feedback
+    if (selected !== null) return;
     setSelected(i);
     const correct = i === q.answerIndex;
 
@@ -66,7 +69,6 @@ export default function Quiz({
 
     setShowFeedback(true);
 
-    // Auto-advance after feedbackDurationMs
     timerRef.current = setTimeout(() => {
       setShowFeedback(false);
       setSelected(null);
@@ -81,25 +83,25 @@ export default function Quiz({
   const progressText = `${idx + 1} / ${questions.length}`;
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-4">
-      <div className="flex items-center justify-between mb-3">
-        <h2 className="text-2xl font-bold">{title}</h2>
+    <div className="w-full max-w-3xl p-4">
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-3xl font-extrabold">{title}</h2>
         <div className="text-sm opacity-80">Q {progressText}</div>
       </div>
 
-      <div className="bg-white/70 rounded-2xl p-4 shadow">
-        <p className="text-lg mb-4">{q.prompt}</p>
-        <div className="space-y-2">
+      <div className="bg-white/70 rounded-2xl p-6 border shadow-sm">
+        <p className="text-xl mb-6">{q.prompt}</p>
+
+        {/* Options as horizontal chips */}
+        <div className="flex flex-wrap gap-3 mb-6">
           {q.options.map((opt, i) => {
             const isCorrect = i === q.answerIndex;
             const chosen = selected === i;
-            // Highlight during feedback
-            const base =
-              'w-full text-left px-4 py-3 rounded-xl border transition';
-            let cls = base + ' hover:bg-neutral-50';
+            let cls =
+              "inline-flex items-center gap-2 px-4 py-2 rounded-full border transition hover:bg-neutral-50";
             if (selected !== null) {
-              if (isCorrect) cls = base + ' border-green-600 bg-green-50';
-              if (chosen && !isCorrect) cls = base + ' border-red-600 bg-red-50';
+              if (isCorrect) cls = "inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-green-600 bg-green-50";
+              if (chosen && !isCorrect) cls = "inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-red-600 bg-red-50";
             }
             return (
               <button
@@ -116,35 +118,42 @@ export default function Quiz({
 
         {/* Feedback banner */}
         {showFeedback && (
-          <div className="mt-4">
+          <div className="mt-2">
             <div className="rounded-xl border-2 border-yellow-400 bg-yellow-50 px-4 py-3 shadow animate-pulse">
               <p className="font-semibold">
                 {selected === q.answerIndex ? 'Nice! Correct ✅' : 'Oops! Not quite ❌'}
               </p>
-              {q.explain && (
-                <p className="text-sm opacity-80 mt-1">{q.explain}</p>
-              )}
-              <p className="text-xs opacity-70 mt-2">
-                Advancing in 3 seconds…
-              </p>
+              {q.explain && <p className="text-sm opacity-80 mt-1">{q.explain}</p>}
+              <p className="text-xs opacity-70 mt-2">Advancing in 3 seconds…</p>
             </div>
           </div>
         )}
 
+        {/* Footer row inside the card: Score + Replay/Next */}
         <div className="mt-6 flex items-center justify-between">
-          <div className="text-sm">Score: <span className="font-semibold">{score}</span></div>
-          {!showFeedback && (
-            <button
-              className="text-sm underline opacity-80 disabled:opacity-40"
-              onClick={() => {
-                // manual next (only if nothing selected yet)
-                if (selected === null && !isLast) setIdx((n) => n + 1);
-              }}
-              disabled={selected !== null || isLast}
-            >
-              Skip
-            </button>
-          )}
+          <div className="text-sm">
+            Score: <span className="font-semibold">{score}</span>
+          </div>
+          <div className="flex gap-3">
+            {onReplay && (
+              <button
+                className="px-4 py-2 rounded-lg border hover:bg-neutral-50 text-sm"
+                onClick={onReplay}
+                disabled={showFeedback || selected !== null}
+              >
+                Replay
+              </button>
+            )}
+            {onNextQuiz && (
+              <button
+                className="px-4 py-2 rounded-lg border hover:bg-neutral-50 text-sm"
+                onClick={onNextQuiz}
+                disabled={showFeedback || selected !== null}
+              >
+                Next Quiz
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </div>
