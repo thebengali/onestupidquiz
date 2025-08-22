@@ -29,10 +29,11 @@ export default function HomePage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      {/* Centered category row */}
-      <div className="mb-8 flex justify-center">
-        <div className="flex flex-wrap gap-4">
+    <div className="px-4 py-8">
+      {/* Centered Stage Container */}
+      <div className="max-w-3xl mx-auto">
+        {/* Category row aligned to stage */}
+        <div className="mb-8 flex flex-wrap gap-4">
           {ALL_CATEGORIES.map((c) => {
             const activeCat = c === selectedCat;
             return (
@@ -46,10 +47,8 @@ export default function HomePage() {
             );
           })}
         </div>
-      </div>
 
-      {/* Quiz Stage */}
-      <div className="flex justify-center">
+        {/* Quiz Stage */}
         <Quiz
           key={active.slug + ':' + runKey}
           title={active.title}
