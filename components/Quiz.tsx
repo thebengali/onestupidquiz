@@ -14,27 +14,15 @@ type QuizProps = {
   questions: Question[];
   onComplete?: (score: number) => void;
   feedbackDurationMs?: number; // default 3000
-  quirkyScoring?: boolean;
   onReplay?: () => void;
   onNextQuiz?: () => void;
 };
-
-function computeScoreDelta(correct: boolean, streak: number) {
-  if (correct) {
-    let delta = 1;
-    if (streak >= 3) delta += 0.5;
-    return delta;
-  } else {
-    return -0.3;
-  }
-}
 
 export default function Quiz({
   title,
   questions,
   onComplete,
   feedbackDurationMs = 3000,
-  quirkyScoring = true,
   onReplay,
   onNextQuiz,
 }: QuizProps) {
@@ -59,13 +47,9 @@ export default function Quiz({
     setSelected(i);
     const correct = i === q.answerIndex;
 
-    if (quirkyScoring) {
-      const delta = computeScoreDelta(correct, streak);
-      setScore((s) => Math.max(0, parseFloat((s + delta).toFixed(2))));
-      setStreak((st) => (correct ? st + 1 : 0));
-    } else {
-      setScore((s) => s + (correct ? 1 : 0));
-    }
+    const delta = correct ? (streak >= 3 ? 1.5 : 1) : -0.3;
+    setScore((s) => Math.max(0, parseFloat((s + delta).toFixed(2))));
+    setStreak((st) => (correct ? st + 1 : 0));
 
     setShowFeedback(true);
     timerRef.current = setTimeout(() => {
@@ -81,6 +65,20 @@ export default function Quiz({
 
   const progressText = `${idx + 1} / ${questions.length}`;
 
+  const baseOption: React.CSSProperties = {
+    width: '100%',
+    textAlign: 'left',
+    padding: '20px 24px',
+    borderRadius: 12,
+    borderWidth: 2,
+    display: 'flex',
+    alignItems: 'center',
+    gap: 20,
+    fontSize: 22,
+    fontWeight: 600,
+    background: 'white',
+  };
+
   return (
     <div className="w-full">
       <h2 className="text-4xl font-extrabold mb-3">{title}</h2>
@@ -89,36 +87,33 @@ export default function Quiz({
       <div className="bg-white rounded-2xl p-6 border-2 shadow-sm">
         <p className="text-3xl font-semibold mb-6">{q.prompt}</p>
 
-        {/* Stacked full-width options */}
         <div className="space-y-4 mb-8">
           {q.options.map((opt, i) => {
             const isCorrect = i === q.answerIndex;
             const chosen = selected === i;
-            let cls = "block w-full text-left px-6 py-5 rounded-lg border-2 text-2xl font-medium flex items-center gap-5 transition";
+            let style: React.CSSProperties = { ...baseOption };
             if (selected !== null) {
-              if (isCorrect) cls += " bg-green-50 border-green-700";
-              if (chosen && !isCorrect) cls += " bg-red-50 border-red-600";
-            } else {
-              cls += " hover:bg-neutral-50";
+              if (isCorrect) style = { ...style, background: '#dcfce7', borderColor: '#15803d' };
+              if (chosen && !isCorrect) style = { ...style, background: '#fee2e2', borderColor: '#dc2626' };
             }
             return (
               <button
                 key={i}
-                className={cls}
+                style={style}
+                className="transition hover:bg-neutral-50"
                 onClick={() => handleSelect(i)}
                 disabled={selected !== null}
               >
-                <span className="text-3xl font-bold w-8">{i + 1}.</span>
-                <span className="flex-1">{opt}</span>
+                <span style={{ fontSize: 26, fontWeight: 800, width: 30, display: 'inline-block' }}>{i + 1}.</span>
+                <span style={{ flex: 1 }}>{opt}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Feedback banner */}
         {showFeedback && (
           <div className="mt-2">
-            <div className="rounded-xl border-2 border-green-700 bg-green-200 px-5 py-4 shadow">
+            <div className="rounded-xl border-2 px-5 py-4 shadow" style={{ background: '#a7f3d0', borderColor: '#047857' }}>
               <p className="text-xl font-bold">
                 {selected === q.answerIndex ? 'Feedback: Correct ✅' : 'Feedback: Not quite ❌'}
               </p>
@@ -126,7 +121,6 @@ export default function Quiz({
           </div>
         )}
 
-        {/* Controls */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8">
           <button
             className="px-6 py-4 rounded-lg border-2 text-xl font-medium hover:bg-neutral-50 disabled:opacity-50"

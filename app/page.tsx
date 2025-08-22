@@ -1,6 +1,6 @@
 'use client';
 import React, { useMemo, useState } from 'react';
-import QuizStage from '@/components/QuizStage';
+import Quiz from '@/components/Quiz';
 import { QUIZ_SETS, QuizSet, ALL_CATEGORIES } from '@/lib/quizzes';
 
 export default function HomePage() {
@@ -46,7 +46,7 @@ export default function HomePage() {
           })}
         </div>
 
-        <QuizStage
+        <Quiz
           key={active.slug + ':' + runKey}
           title={active.title}
           questions={active.questions}
