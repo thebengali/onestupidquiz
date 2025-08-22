@@ -1,13 +1,16 @@
 import type { MetadataRoute } from 'next';
-import { quizzes } from '@/app/data/quizzes';
+import { QUIZ_SETS } from '@/lib/quizzes';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://onestupidquiz.com';
+  const base = 'https://www.onestupidquiz.com';
+  const now = new Date();
   const items: MetadataRoute.Sitemap = [
-    { url: `${base}/`, lastModified: new Date() },
-    { url: `${base}/about`, lastModified: new Date() },
-    { url: `${base}/privacy`, lastModified: new Date() },
+    { url: `${base}/`, lastModified: now },
+    { url: `${base}/about`, lastModified: now },
+    { url: `${base}/privacy`, lastModified: now },
   ];
-  quizzes.forEach(q => items.push({ url: `${base}/quiz/${q.id}`, lastModified: new Date() }));
+  for (const s of QUIZ_SETS) {
+    items.push({ url: `${base}/quiz/${s.slug}`, lastModified: now });
+  }
   return items;
 }
