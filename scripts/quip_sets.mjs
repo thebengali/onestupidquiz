@@ -1,0 +1,22 @@
+export const QUAD_SETS = [
+  { best: "Chef’s kiss.", close: "Spicy almost!", meh: "A tasteful shrug.", nope: "A choice was made." },
+  { best: "Correct and a little smug—respect.", close: "Nearly there—one token off.", meh: "Half credit for enthusiasm.", nope: "Bold… incorrect." },
+  { best: "Flawless victory.", close: "Close enough to impress a chatbot.", meh: "Decently misguided.", nope: "Swing and a philosophical miss." },
+  { best: "Certified Not Stupid™.", close: "Solid hunch, slightly off.", meh: "It vibes, but it lies.", nope: "The gremlins demanded this pick." },
+  { best: "Your future AI overlord nods.", close: "Close, like a near-miss meteor.", meh: "Not wrong, not right.", nope: "Destined for the blooper reel." },
+  { best: "Absolutely nailed it.", close: "You grazed the right neuron.", meh: "Interesting path, scenic detour.", nope: "Confidently incorrect—my fave." },
+  { best: "Brilliant chaos under control.", close: "Almost spicy enough.", meh: "Meh, but with pizzazz.", nope: "Plot twist: still no." },
+  { best: "Galaxy brain moment.", close: "So close I can taste it.", meh: "Mid but memorable.", nope: "The void says ‘no’." },
+  { best: "Exquisite correctness.", close: "Right-ish.", meh: "E for effort.", nope: "No notes. Just… no." },
+  { best: "Peak not-stupid energy.", close: "Reasonable miss.", meh: "It kinda tracks.", nope: "Chaos without the ladder." },
+  { best: "Elite braincell behavior.", close: "Almost glorious.", meh: "Vibes>facts ratio high.", nope: "Bold swing, whiffed." },
+  { best: "Magnificently right.", close: "Within spitting distance.", meh: "The map was upside down.", nope: "Tripped over the truth." },
+  { best: "Correct like a sunrise.", close: "Whispered yes.", meh: "Shrug-core.", nope: "The answer left the chat." },
+  { best: "Utterly undeniable.", close: "Gently wrong.", meh: "Politely incorrect.", nope: "Nope-ocalypse." },
+  { best: "On brand for genius.", close: "Respectable attempt.", meh: "Cute theory.", nope: "The gremlin union says no." },
+  { best: "Stupendously accurate.", close: "Almost cinematic.", meh: "Documentary of ‘meh’.", nope: "A museum of wrong." },
+  { best: "An answer for the ages.", close: "Near-miss legend.", meh: "Mid-season filler.", nope: "Season finale of wrong." },
+  { best: "Unreasonably correct.", close: "Admirably close.", meh: "Measured mediocrity.", nope: "Chaos gremlin pressed it." },
+  { best: "Full marks, full vibes.", close: "Close. Suspiciously close.", meh: "Half-right, double-fun.", nope: "Not even the simulation approves." },
+  { best: "10/10 would pick again.", close: "8/10 proximity.", meh: "5/10 energy.", nope: "0/10 accuracy." }
+];

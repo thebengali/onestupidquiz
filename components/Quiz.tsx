@@ -40,28 +40,33 @@ const DEFAULT_POOLS = {
     'Chef’s kiss.',
     'Correct and a little bit smug—respect.',
     'Flawless victory.',
-    'Your future AI overlord nods approvingly.'
+    'Your future AI overlord nods approvingly.',
+    'Certified Not Stupid™.',
+    'Brain cell doing backflips.'
   ],
   close: [
     'Close enough to impress a chatbot.',
     'Spicy almost!',
     'Nearly there—just one token off.',
     'You grazed the right neuron.',
-    'Solid hunch, slightly off.'
+    'Solid hunch, slightly off.',
+    'ChatGPT would probably give this half-credit.'
   ],
   meh: [
     'Half credit for enthusiasm.',
     'Not wrong, not right—Schrödinger’s answer.',
     'A tasteful shrug.',
     'It vibes, but it lies.',
-    'Decently misguided.'
+    'Decently misguided.',
+    'The vibes are immaculate; the facts are not.'
   ],
   nope: [
     'A choice was made.',
     'Bold… incorrect.',
     'Swing and a philosophical miss.',
     'The gremlins demanded this pick.',
-    'Destined for the blooper reel.'
+    'Destined for the blooper reel.',
+    'Confidently incorrect—my favorite genre.'
   ]
 };
 
@@ -139,7 +144,7 @@ export default function Quiz({
       setSelected(null);
       setQuip('');
       if (isLast) {
-        setIdx(0); // loop or keep? For now loop to start
+        setIdx(0); // loop to start after last
       } else {
         setIdx((n) => n + 1);
       }
