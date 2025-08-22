@@ -30,10 +30,10 @@ export default function Header() {
           <Image
             src="/brand/OSQ_SiteNameBrand.png"
             alt="OneStupidQuiz"
-            height={56}
-            width={680}
+            height={84}
+            width={1000}
             priority
-            style={{ height: 56, width: 'auto' }}
+            style={{ height: 84, width: 'auto' }}
           />
         </div>
 
