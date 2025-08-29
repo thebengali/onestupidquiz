@@ -13,7 +13,7 @@ type Question = {
   prompt: string;
   options: string[];
   answerIndex: number;
-  weights?: [number, number, number, number];
+  weights?: number[];
   quipsByOption?: string[][];
   quipPools?: {
     best?: string[];
