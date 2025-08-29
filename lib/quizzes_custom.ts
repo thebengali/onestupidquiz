@@ -515,4 +515,4 @@ export const quizzesCustom = [
       }
     ]
   }
-] as const;
+];
