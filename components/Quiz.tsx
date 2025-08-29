@@ -186,8 +186,8 @@ export default function Quiz({
             const chosen = selected === i;
             let style: React.CSSProperties = { ...baseOption };
             if (selected !== null) {
-              if (isBest) style = { ...style, background: '#dcfce7', borderColor: '#15803d' };
-              if (chosen && !isBest) style = { ...style, background: '#fee2e2', borderColor: '#dc2626' };
+              if (chosen && isBest) style = { ...style, background: "#dcfce7", borderColor: "#15803d" };
+              if (chosen && !isBest) style = { ...style, background: "#f1f5f9", borderColor: "#64748b" };
             }
             return (
               <button
