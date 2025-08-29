@@ -1,7 +1,3 @@
-// Auto-generated from osq_quiz_template.csv
-// Drop this file in your repo as: lib/quizzes_custom.ts
-// Then import and merge into your quizzes index.
-
 export const quizzesCustom = [
   {
     "slug": "ai-stuff-001",
@@ -18,6 +14,12 @@ export const quizzesCustom = [
           "Lyrical"
         ],
         "answerIndex": 0,
+        "weights": [
+          0.5,
+          5.0,
+          0.25,
+          0.75
+        ],
         "quipsByOption": [
           [
             "Half Correct (also boring)."
@@ -43,6 +45,12 @@ export const quizzesCustom = [
           "Ask better, bro!"
         ],
         "answerIndex": 0,
+        "weights": [
+          1.0,
+          1.25,
+          0.5,
+          0.3
+        ],
         "quipsByOption": [
           [
             "Putting your degree to use I see"
@@ -65,9 +73,15 @@ export const quizzesCustom = [
           "Uncertain until observed",
           "Both quantum phenomena",
           "I want a cat…",
-          "Schrö … who?!"
+          "Schrö … who?! "
         ],
         "answerIndex": 0,
+        "weights": [
+          1.0,
+          0.66,
+          2.0,
+          0.5
+        ],
         "quipsByOption": [
           [
             "Exquisite correctness."
@@ -92,7 +106,13 @@ export const quizzesCustom = [
           "Not enough context",
           "Pick consensus choice"
         ],
-        "answerIndex": 1,
+        "answerIndex": 0,
+        "weights": [
+          0.33,
+          2.0,
+          0.75,
+          1.0
+        ],
         "quipsByOption": [
           [
             "Lazy, lazy, lazy!"
@@ -118,6 +138,12 @@ export const quizzesCustom = [
           "Self-creating intelligence"
         ],
         "answerIndex": 0,
+        "weights": [
+          3.0,
+          2.0,
+          1.0,
+          0.5
+        ],
         "quipsByOption": [
           [
             "Yo DJ, where’s the party?"
@@ -143,6 +169,12 @@ export const quizzesCustom = [
           "Autonomous Infinity"
         ],
         "answerIndex": 0,
+        "weights": [
+          7.0,
+          -5.0,
+          1.0,
+          2.0
+        ],
         "quipsByOption": [
           [
             "Yeah yeah! Let’s rock!"
@@ -167,7 +199,13 @@ export const quizzesCustom = [
           "What is this ABC, 1,2,3?!",
           "Define variables first"
         ],
-        "answerIndex": 2,
+        "answerIndex": 0,
+        "weights": [
+          0.33,
+          1.0,
+          5.0,
+          2.0
+        ],
         "quipsByOption": [
           [
             "Get your Alzebra right!"
@@ -193,6 +231,12 @@ export const quizzesCustom = [
           "Will our next Gen will be BI, CI, DI?"
         ],
         "answerIndex": 0,
+        "weights": [
+          3.0,
+          0.5,
+          1.0,
+          2.0
+        ],
         "quipsByOption": [
           [
             "Reality bites, profound."
@@ -217,7 +261,13 @@ export const quizzesCustom = [
           "Builds a better one",
           "Throws a teen tantrum"
         ],
-        "answerIndex": 2,
+        "answerIndex": 0,
+        "weights": [
+          1.0,
+          0.33,
+          5.0,
+          0.5
+        ],
         "quipsByOption": [
           [
             "Clever, aren’t ya?"
@@ -242,7 +292,13 @@ export const quizzesCustom = [
           "Agents design agents",
           "AutoML, obviously"
         ],
-        "answerIndex": 3,
+        "answerIndex": 0,
+        "weights": [
+          0.75,
+          0.33,
+          1.0,
+          2.0
+        ],
         "quipsByOption": [
           [
             "Hehehehe"
@@ -261,7 +317,7 @@ export const quizzesCustom = [
     ]
   },
   {
-    "slug": "ai-stuff-002",
+    "slug": "Ai-stuff-002",
     "title": "Whoz AI",
     "category": "AI Stuff",
     "questions": [
@@ -274,7 +330,13 @@ export const quizzesCustom = [
           "Define, Decompose, Draft, Debate, Deliver",
           "Wish, Whisper, Wrangle, Ship, Celebrate"
         ],
-        "answerIndex": 2,
+        "answerIndex": 0,
+        "weights": [
+          1.0,
+          0.5,
+          2.0,
+          0.33
+        ],
         "quipsByOption": [
           [
             "Yawn…"
@@ -299,7 +361,13 @@ export const quizzesCustom = [
           "Purpose, Frame, Think, Check",
           "Wish, Whisper, Wrangle, Weigh"
         ],
-        "answerIndex": 3,
+        "answerIndex": 0,
+        "weights": [
+          1.0,
+          0.5,
+          0.75,
+          2.0
+        ],
         "quipsByOption": [
           [
             "Sigh"
@@ -325,6 +393,12 @@ export const quizzesCustom = [
           "Flatter, Bait, Demand"
         ],
         "answerIndex": 0,
+        "weights": [
+          1.0,
+          0.33,
+          0.75,
+          0.5
+        ],
         "quipsByOption": [
           [
             "Zzzzz"
@@ -349,7 +423,13 @@ export const quizzesCustom = [
           "Context, Constrain",
           "Coffee, Command"
         ],
-        "answerIndex": 1,
+        "answerIndex": 0,
+        "weights": [
+          1.0,
+          3.0,
+          0.5,
+          0.33
+        ],
         "quipsByOption": [
           [
             "Yawn…"
@@ -375,6 +455,12 @@ export const quizzesCustom = [
           "Ask clearly"
         ],
         "answerIndex": 0,
+        "weights": [
+          5.0,
+          1.0,
+          2.0,
+          0.5
+        ],
         "quipsByOption": [
           [
             "You da smart one"
@@ -399,7 +485,13 @@ export const quizzesCustom = [
           "AI gotta do what it’s told",
           "Learning from labeled data"
         ],
-        "answerIndex": 2,
+        "answerIndex": 0,
+        "weights": [
+          0.5,
+          0.33,
+          2.0,
+          1.0
+        ],
         "quipsByOption": [
           [
             "Borrrrring"
@@ -425,6 +517,12 @@ export const quizzesCustom = [
           "Classification and Regression"
         ],
         "answerIndex": 0,
+        "weights": [
+          5.0,
+          0.5,
+          0.33,
+          1.0
+        ],
         "quipsByOption": [
           [
             "Woohoo, that’s a definition!"
@@ -449,7 +547,13 @@ export const quizzesCustom = [
           "Thumbs up training",
           "Tuning with human feedback"
         ],
-        "answerIndex": 2,
+        "answerIndex": 0,
+        "weights": [
+          0.33,
+          1.0,
+          3.0,
+          0.75
+        ],
         "quipsByOption": [
           [
             "Borrrrring"
@@ -472,7 +576,13 @@ export const quizzesCustom = [
           "No rules on what/how to learn",
           "Unsupervised? Party!"
         ],
-        "answerIndex": 3,
+        "answerIndex": 0,
+        "weights": [
+          1.0,
+          0.33,
+          0.95,
+          5.0
+        ],
         "quipsByOption": [
           [
             "PhD answer."
@@ -497,7 +607,13 @@ export const quizzesCustom = [
           "Function approximation from examples",
           "Let data babysit code"
         ],
-        "answerIndex": 3,
+        "answerIndex": 0,
+        "weights": [
+          1.0,
+          0.33,
+          0.25,
+          5.0
+        ],
         "quipsByOption": [
           [
             "Textbook stuff."

@@ -97,18 +97,9 @@ export default function Quiz({
   }, []);
 
   const effectiveWeights = useMemo(() => {
-    if (q.weights) return q.weights;
-    // Build weights giving +1.00 to answerIndex, others get 0.75/0.50/0.30 left-to-right
-    const base: number[] = [...DEFAULT_WEIGHTS];
-    // Move +1.0 to answerIndex
-    const ordered = base.filter((w) => w !== 1.0);
-    const weights = [0,0,0,0] as number[];
-    for (let i=0; i<4; i++) {
-      if (i === q.answerIndex) weights[i] = 1.0;
-      else weights[i] = ordered.shift() as number;
-    }
-    return weights as [number,number,number,number];
-  }, [q]);
+  const w = (Array.isArray(q.weights) && q.weights.length === 4 ? q.weights : DEFAULT_WEIGHTS);
+  return w as [number, number, number, number];
+}, [q]);
 
   const pools = useMemo(() => {
     // Merge custom tier pools with defaults
