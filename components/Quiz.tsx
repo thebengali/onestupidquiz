@@ -14,7 +14,7 @@ type Question = {
   options: string[];
   answerIndex: number;
   weights?: [number, number, number, number];
-  quipsByOption?: [string[], string[], string[], string[]];
+  quipsByOption?: string[][];
   quipPools?: {
     best?: string[];
     close?: string[];
