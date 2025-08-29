@@ -24,3 +24,4 @@ main.container{min-height:calc(100vh - 180px);}
 .small{font-size:12px;color:#666}
 
 :root{}
+:root{--destructive:210 20
