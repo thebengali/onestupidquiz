@@ -6,7 +6,7 @@ import VisitorsCounter from '@components/VisitorsCounter';
 import { QUIZ_SETS as CURATED_QUIZ_SETS } from '@/lib/quizzes';
 import { quizzesCustom } from '@/lib/quizzes_custom';
 
-const QUIZ_SETS = [...quizzesCustom, ...CURATED_QUIZ_SETS];
+const QUIZ_SETS = [...quizzesCustom, ...CURATED_QUIZ_SETS.filter(s => s.category !== "AI Stuff")];
 const ALL_CATEGORIES = ['AI Stuff','Random','History','Geography','Science','Language','Sports'] as const;
 
 export default function HomePage() {
